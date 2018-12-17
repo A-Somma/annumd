@@ -32,12 +32,10 @@ legend({'resolution pour h = 1/3','resolution pour h = 1/4', 'y(x) = sin(pi*x)'}
 hold off;
 
 %% Question 2c)
-
-ni = logspace(1, 3, 3);
+n = 3;
+ni = logspace(1, n, n);
 hi = ni.^(-1);
-disp(ni);
 Eh = arrayfun(@maxErreur, ni);
-disp(Eh);
 
 %graph
 figure(2);
