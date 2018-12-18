@@ -32,8 +32,8 @@ legend({'resolution pour h = 1/3','resolution pour h = 1/4', 'y(x) = sin(pi*x)'}
 hold off;
 
 %% Question 2c)
-n = 3;
-ni = logspace(1, n, n);
+iterations = 4;
+ni = logspace(1, iterations, iterations);
 hi = ni.^(-1);
 Eh = arrayfun(@maxErreur, ni);
 
@@ -43,7 +43,7 @@ loglog(hi, Eh);
 hold on;
 
 grid on; title("Courbe de l'erreur en fonction de h");
-xlabel("hi");
+xlabel("h");
 ylabel("E(h)");
 legend({'Max Erreur'},'Location','north', ...
     'FontSize',12,'FontWeight','bold')
@@ -51,7 +51,6 @@ hold off;
 
 
 %% Definition de fonctions locales
-
 function maxErr = maxErreur(n)
     r = @(x) ((pi)^2)*(sin((x)*(pi)));
     y = @(x) sin((x)*(pi));

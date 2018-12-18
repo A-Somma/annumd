@@ -15,6 +15,9 @@ function L  =  choleski(A, n, m)
         L(k,k) = sqrt(m-somme);
         
         for i = (k+1):n
+            if(i>k+m)
+                break;
+            end
             somme = 0;
             for j = 1:(k-1)
                 somme = somme + L(i,j)*L(k,j);
